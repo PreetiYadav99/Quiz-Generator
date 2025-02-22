@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+font-family: 'Roboto', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            color: white;
+            background: #2f3b47; /* Deep slate blue */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Quotes */
+        .background-quotes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+            animation: moveQuotes 40s linear infinite;
+            line-height: 2em;
+            padding: 20px;
+        }
+
+        /* Animating the Quotes */
+        @keyframes moveQuotes {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .background-quotes span {
+            display: inline-block;
+            margin-right: 3em;
+            padding: 1em;
+        }
+
+        /* Header */
+        header {
+            font-size: 2.5em;
+            color: #f1f1f1;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2em;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header marquee {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #ff8c00;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 2rem auto;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            text-align: center;
+            color: #f1f1f1;
+        }
+
+        .quiz-result {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #d1d1d1;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            color: white;
+            background-color: #28a745;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+
+        .back-btn {
+            margin-top: 1rem;
+            display: inline-block;
+            text-decoration: none;
+            color: #f1f1f1;
+            font-size: 1rem;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 1.5em;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 1em;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <marquee>
+            Quiz Results
+        </marquee>
+    </header>
+
+    <div class="container">
+        <h1>Your Quiz Results</h1>
+        <div class="quiz-result" id="quiz-result">
+            <!-- Quiz result will be displayed here -->
+        </div>
+        <a class="download-btn" id="download-btn" href="#">Download as PDF</a>
+        <a class="back-btn" href="/">← Back to Home</a>
+    </div>
+
+    <footer>
+        © 2024 Quiz Generator. All rights reserved.
+    </footer>
+
+    <script>
+        // Fetch quiz result dynamically
+        fetch('/generate')
+            .then(response => response.json())
+            .then(data => {
+                if (data.quiz) {
+                    document.getElementById('quiz-result').textContent = data.quiz;
+                    const downloadLink = document.getElementById('download-btn');
+                    downloadLink.href = `/download?pdf_path=instance/quiz.pdf`;
+                } else {
+                    document.getElementById('quiz-result').textContent = data.error || "Failed to load results.";
+                    document.getElementById('download-btn').style.display = "none";
+                }
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Quiz Generator</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+font-family: 'Roboto', sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            color: white;
+            background: #2f3b47; /* Deep slate blue */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            padding: 2em;
+        }
+
+        /* Header */
+        header {
+            font-size: 2.5em;
+            color: #f1f1f1;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2em;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1em;
+        }
+
+        header marquee {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #ff8c00;
+        }
+
+        /* Help Section */
+        .help-section {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2em;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .help-section h2 {
+            color: #ff8c00;
+            text-align: center;
+        }
+
+        .help-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .help-section ul li {
+            margin-bottom: 1em;
+            font-size: 1.2em;
+        }
+
+        /* Back Button */
+        .back-button {
+            margin-top: 2em;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            background: #394e5e;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #28a745;
+            transform: scale(1.05);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <marquee>
+            Need Help? You're at the Right Place!
+        </marquee>
+    </header>
+
+    <div class="help-section">
+        <h2>How to Use Quiz Generator</h2>
+        <ul>
+            <li>
+                <strong>Step 1:</strong> Go to the <a href="/quiz" style="color: #ff8c00;">Start Quiz</a> page.
+            </li>
+            <li>
+                <strong>Step 2:</strong> Enter a topic, paste your notes, or upload a PDF to generate quizzes.
+            </li>
+            <li>
+                <strong>Step 3:</strong> Select the number of questions you want in the quiz.
+            </li>
+            <li>
+                <strong>Step 4:</strong> Click on "Generate Quiz" to create a personalized quiz.
+            </li>
+            <li>
+                <strong>Step 5:</strong> You can view the generated quiz on the page or download it as a PDF.
+            </li>
+        </ul>
+
+        <h2>FAQs</h2>
+        <ul>
+            <li>
+                <strong>What types of quizzes can I create?</strong> Multiple-choice questions with four options, one correct.
+            </li>
+            <li>
+                <strong>How can I download the quiz?</strong> Use the "Download Quiz" button after generating a quiz.
+            </li>
+            <li>
+                <strong>Can I upload a PDF?</strong> Yes, simply upload a PDF file with your content to generate quizzes.
+            </li>
+            <li>
+                <strong>Is this free?</strong> Yes, the application is completely free to use!
+            </li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-button">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Generator - Chalkboard Theme</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+font-family: 'Roboto', sans-serif;
+
+        }
+
+        /* Body Styling */
+        body {
+            color: white;
+            background: #2f3b47; /* Deep slate blue */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Quotes */
+        .background-quotes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+            animation: moveQuotes 40s linear infinite;
+            line-height: 2em;
+            padding: 20px;
+        }
+
+        /* Animating the Quotes */
+        @keyframes moveQuotes {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .background-quotes span {
+            display: inline-block;
+            margin-right: 3em;
+            padding: 1em;
+        }
+
+        /* Header */
+        header {
+            font-size: 2.5em;
+            color: #f1f1f1;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.2em;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header marquee {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #ff8c00;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 2em;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #394e5e;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 3em;
+            font-family: 'Great Vibes', cursive;
+
+
+        }
+
+        main p {
+            font-size: 1.8em;
+            font-style: italic;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+            color: #d1d1d1;
+        }
+
+        /* Buttons */
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 1.5em;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                font-size: 2em;
+            }
+            nav a {
+                font-size: 1.2em;
+                padding: 10px 18px;
+            }
+            button {
+                font-size: 1.3em;
+                padding: 12px 25px;
+            }
+            main p {
+                font-size: 1.5em;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-quotes">
+        <span>"The best way to predict the future is to create it." - Abraham Lincoln</span>
+        <span>"Believe in yourself and all that you are." - Christian D. Larson</span>
+        <span>"Your limitation—it’s only your imagination." - Unknown</span>
+        <span>"Push yourself, because no one else is going to do it for you." - Unknown</span>
+        <span>"Success is what happens after you have survived all your mistakes." - Unknown</span>
+        <span>"Dream it. Wish it. Do it." - Unknown</span>
+        <span>"The key to success is to focus on goals, not obstacles." - Unknown</span>
+    </div>
+
+    <header>
+        <marquee>
+            Welcome to the Quiz Generator
+        </marquee>
+    </header>
+
+
+    <nav>
+    <a href="/">Home</a>
+    <a href="/quiz">Generate Quiz</a>
+    <a href="/result">Results</a> <!-- Ensure the link to /result is correct -->
+    <a href="/help">Help</a> <!-- Ensure the link to /help is correct -->
+</nav>
+
+
+
+    <main>
+        <p>Create and download quizzes in just a few clicks!</p>
+        <button onclick="location.href='/quiz'">Start Quiz</button>
+
+
+    </main>
+
+    <footer>
+        © 2024 Quiz Generator. All rights reserved.
+    </footer>
+</body>
+</html>

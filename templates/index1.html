@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Generator</title>
+    <link rel="stylesheet" href="/static/style1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate MCQ Quiz</h1>
+        <form id="quiz-form">
+            <label for="topic">Enter a Topic:</label>
+            <input type="text" name="topic" placeholder="Type your topic here..." />
+
+            <label for="note">Paste your text:</label>
+            <textarea name="note" placeholder="Paste your text here..."></textarea>
+
+            <label for="file">Or upload a PDF:</label>
+            <input type="file" name="file" accept="application/pdf">
+
+            <label for="num_questions">Number of questions:</label>
+            <input type="number" name="num_questions" value="5" min="1" required>
+
+            <button type="submit">Generate Quiz</button>
+        </form>
+
+        <div id="error-message" class="alert-danger"></div>
+        <div id="quiz-section">
+            <h2>Generated Quiz</h2>
+            <ol id="quiz-list"></ol>
+            <button id="download-quiz">Download Quiz as PDF</button>
+        </div>
+    </div>
+
+    <script src="/static/script1.js"></script>
+</body>
+</html>
